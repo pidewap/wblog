@@ -1,37 +1,24 @@
 <?php
 if($_GET['id'] == 'top'){
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81350?action=edit" method="post">
-
-            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'TOP List - BeLagu' %}
-{% set kw = '' %}
-{% set title = 'TOP List - BeLagu' %}
-
-$content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=100/json'); 
-$top_albums=json_decode($content);
-$tracks = $top_albums->feed->entry;
-echo '{% set top = {
-';
-foreach( $tracks as $track ) {
-$img = $track->{'im:image'}[0]->label;
-  $title = $track->{'im:name'}->label;
-  $artist = $track->{'im:artist'}->label;
-$n=rand(0,100000);
-echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
-';
+$form='https://wap4.co/site/4770/pack/81350?action=edit';
+            $linkurl='http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=100/json';
+            $ltitle='TOP List - BeLagu';
 }
-echo '
-} %}';
-}
-?>
-<?php
 if($_GET['id'] == 'dangdut'){
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81351?action=edit" method="post">
+$form='https://wap4.co/site/4770/pack/81351?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1274/json';
+            $ltitle='Dangdut - BeLagu';
+}
+?>
 
-            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'TOP List - BeLagu' %}
-{% set kw = '' %}
-{% set title = 'TOP List - BeLagu' %}
+<form class="pure-form pure-form-stacked" action="<?php echo $form; ?>" method="post">
 
-$content=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1274/json'); 
+            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = '<?php echo $ltitle; ?>' %}
+{% set kw = '<?php echo $ltitle; ?>' %}
+{% set title = '<?php echo $ltitle; ?>' %}
+
+<?php
+$content=file_get_contents(''.$linkurl.''); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
@@ -48,6 +35,7 @@ echo '
 } %}';
 }
 ?>
+
 {% use '_blocks' %}
 
 {{ block( 'head_tags' ) }}
