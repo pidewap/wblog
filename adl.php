@@ -4,5 +4,6 @@ $json = file_get_contents($json_url);
 $data = json_decode($json, TRUE);
 echo '<pre>';
 print_r($data);
+echo '720 = '.$data[urls][0][id].'';
 echo '</pre>';
 ?>
