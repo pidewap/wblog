@@ -18,6 +18,5 @@ if($_GET['type'] == '240p'){
 if($_GET['type'] == '144p'){
   $url = $data[urls][4][id];
 }
-header(Location: '.$url.');
-exit();
+echo $url;
 ?>
