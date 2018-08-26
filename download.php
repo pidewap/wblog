@@ -19,7 +19,7 @@ $img = $track->{'im:image'}[0]->label;
   $title = $track->{'im:name'}->label;
   $artist = $track->{'im:artist'}->label;
 $n=rand(0,100000);
-echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
+echo ''.$n.': {title: "'.str_replace('"','',$title).'", artist: "'.str_replace('"','',$artist).'", img: "'.$img.'"},
 ';
 }
 echo '
