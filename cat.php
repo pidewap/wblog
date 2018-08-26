@@ -6,11 +6,46 @@ $form='https://wap4.co/site/4770/pack/81350?action=edit';
 }
 if($_GET['id'] == 'dangdut'){
 $form='https://wap4.co/site/4770/pack/81351?action=edit';
-            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1274/json';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1274/json';
             $ltitle='Dangdut - BeLagu';
 }
+if($_GET['id'] == 'kpop'){
+$form='https://wap4.co/site/4770/pack/81352?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=51/json';
+            $ltitle='K-POP - BeLagu';
+}
+if($_GET['id'] == 'jpop'){
+$form='https://wap4.co/site/4770/pack/81353?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=27/json';
+            $ltitle='J-POP - BeLagu';
+}
+if($_GET['id'] == 'cpop'){
+$form='https://wap4.co/site/4770/pack/81355?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1250/json';
+            $ltitle='C-POP - BeLagu';
+}
+if($_GET['id'] == 'india'){
+$form='https://wap4.co/site/4770/pack/81356?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1262/json';
+            $ltitle='India Bollywood - BeLagu';
+}
+if($_GET['id'] == 'anime'){
+$form='https://wap4.co/site/4770/pack/81357?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1274/json';
+            $ltitle='Anime Music - BeLagu';
+}
+if($_GET['id'] == 'indo'){
+$form='https://wap4.co/site/4770/pack/81358?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1259/json';
+            $ltitle='Indonesia Pop - BeLagu';
+}
+if($_GET['id'] == 'malay'){
+$form='https://wap4.co/site/4770/pack/81359?action=edit';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1255/json';
+            $ltitle='Malaysia Pop - BeLagu';
+}
 ?>
-
+<a href="?id=top">top</a>||<a href="?id=kpop">kpop</a>||<a href="?id=jpop">jpop</a>||<a href="?id=cpop">cpop</a>||<a href="?id=dangdut">dangdut</a>||<a href="?id=anime">anime</a>||<a href="?id=india">india</a>||<a href="?id=indo">indo</a>||<a href="?id=malay">malay</a>||<br><br>
 <form class="pure-form pure-form-stacked" action="<?php echo $form; ?>" method="post">
 
             <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = '<?php echo $ltitle; ?>' %}
