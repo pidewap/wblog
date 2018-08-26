@@ -1,7 +1,7 @@
 <a href="/main.php">main.php</a>||<a href="/music.php">music.php</a>||<a href="/download.php">download.php</a><br><br>
 
 <form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81041?tab=file_edit&amp;file=%2Fmusic" method="post">
-                <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc %}{{ search_term|title }}, Download lagu {{ search_term|title }}, Free Download {{ search_term|title }} Mp3, Video {{ search_term|title }}, Download Lagu {{ search_term|title }}, Music Video {{ search_term|title }}{% endset %}
+                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set desc %}{{ search_term|title }}, Download lagu {{ search_term|title }}, Free Download {{ search_term|title }} Mp3, Video {{ search_term|title }}, Download Lagu {{ search_term|title }}, Music Video {{ search_term|title }}{% endset %}
 {% set kw %}{{ search_term|title }},Download {{ search_term|title }} Mp3,lagu {{ search_term|title }},{{ search_term|title }} mp3,lirik lagu {{ search_term|title }}, music video {{ search_term|title }}, download {{ search_term|title }} free song{% endset %}
 {% set ogimage %}
 {% for vi in videos|slice(0, 1) %}
