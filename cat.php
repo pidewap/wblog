@@ -48,7 +48,7 @@ $form='https://wap4.co/site/4770/pack/81359?action=edit';
 <a href="?id=top">top</a>||<a href="?id=kpop">kpop</a>||<a href="?id=jpop">jpop</a>||<a href="?id=cpop">cpop</a>||<a href="?id=dangdut">dangdut</a>||<a href="?id=anime">anime</a>||<a href="?id=india">india</a>||<a href="?id=indo">indo</a>||<a href="?id=malay">malay</a>||<br><br>
 <form class="pure-form pure-form-stacked" action="<?php echo $form; ?>" method="post">
 
-            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = '<?php echo $ltitle; ?>' %}
+            <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display:none" rows="35">{% set desc = '<?php echo $ltitle; ?>' %}
 {% set kw = '<?php echo $ltitle; ?>' %}
 {% set title = '<?php echo $ltitle; ?>' %}
 
