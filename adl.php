@@ -4,7 +4,8 @@ $json = file_get_contents($json_url);
 $data = json_decode($json, TRUE);
 
 if($_GET['type'] == '720'){
-  $url = $data[urls][0][id];
+  header('Location: '.$data[urls][0][id].'');
+exit();
 }
 if($_GET['type'] == '360p'){
   $url = $data[urls][1][id];
