@@ -18,7 +18,7 @@ $form='https://wap4.co/site/4770/pack/81351?action=edit';
 {% set title = '<?php echo $ltitle; ?>' %}
 
 <?php
-$content=file_get_contents(''.$linkurl.''); 
+$content=file_get_contents($linkurl); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
@@ -33,7 +33,6 @@ echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
 }
 echo '
 } %}';
-}
 ?>
 
 {% use '_blocks' %}
