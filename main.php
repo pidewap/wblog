@@ -37,7 +37,7 @@ $iimg = $itrack->{'im:image'}[0]->label;
   $ititle = $itrack->{'im:name'}->label;
   $iartist = $itrack->{'im:artist'}->label;
 $in=rand(0,100000);
-echo ''.$in.': {title: "'.$ititle.'", artist: "'.$iartist.'", img: "'.$iimg.'"},
+echo ''.$in.': {title: "'.str_replace('"','',$ititle).'", artist: "'.str_replace('"','',$iartist).'", img: "'.$iimg.'"},
 ';
 }
 echo '
@@ -56,7 +56,7 @@ $dimg = $dtrack->{'im:image'}[0]->label;
   $dtitle = $dtrack->{'im:name'}->label;
   $dartist = $dtrack->{'im:artist'}->label;
 $dn=rand(0,100000);
-echo ''.$dn.': {title: "'.$dtitle.'", artist: "'.$dartist.'", img: "'.$dimg.'"},
+echo ''.$dn.': {title: "'.str_replace('"','',$dtitle).'", artist: "'.str_replace('"','',$dartist).'", img: "'.$dimg.'"},
 ';
 }
 echo '
