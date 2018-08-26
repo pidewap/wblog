@@ -3,7 +3,7 @@ $json_url = 'https://www.saveoffline.com/process/?url=https://www.youtube.com/wa
 $json = file_get_contents($json_url);
 $data = json_decode($json, TRUE);
 
-if($_GET['type'] == '720'){
+if($_GET['type'] == '720p'){
   $url = $data[urls][0][id];
 }
 if($_GET['type'] == '360p'){
