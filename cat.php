@@ -1,12 +1,37 @@
 <?php
 if($_GET['id'] == 'top'){
-<form class="pure-form pure-form-stacked" action="/site/4770/pack/81350?action=edit" method="post">
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81350?action=edit" method="post">
 
             <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'TOP List - BeLagu' %}
 {% set kw = '' %}
 {% set title = 'TOP List - BeLagu' %}
 
 $content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=100/json'); 
+$top_albums=json_decode($content);
+$tracks = $top_albums->feed->entry;
+echo '{% set top = {
+';
+foreach( $tracks as $track ) {
+$img = $track->{'im:image'}[0]->label;
+  $title = $track->{'im:name'}->label;
+  $artist = $track->{'im:artist'}->label;
+$n=rand(0,100000);
+echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
+';
+}
+echo '
+} %}';
+}
+?>
+<?php
+if($_GET['id'] == 'dangdut'){
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81351?action=edit" method="post">
+
+            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'TOP List - BeLagu' %}
+{% set kw = '' %}
+{% set title = 'TOP List - BeLagu' %}
+
+$content=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1274/json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
