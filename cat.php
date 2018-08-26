@@ -31,7 +31,7 @@ $form='https://wap4.co/site/4770/pack/81356?action=edit';
 }
 if($_GET['id'] == 'anime'){
 $form='https://wap4.co/site/4770/pack/81357?action=edit';
-            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=1274/json';
+            $linkurl='https://itunes.apple.com/us/rss/topsongs/limit=100/genre=29/json';
             $ltitle='Anime Music - BeLagu';
 }
 if($_GET['id'] == 'indo'){
