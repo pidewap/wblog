@@ -1,10 +1,10 @@
 <a href="/main.php">main.php</a>||<a href="/music.php">music.php</a>||<a href="/download.php">download.php</a><br><br>
 
 <form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81041?tab=file_edit&amp;file=%2Fdownload" method="post">
-                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set title = 'Download ' ~ data.fulltitle|raw ~ ' - BeLagu' %}
+                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set title = 'Download ' ~ data.fulltitle ~ ' - BeLagu' %}
 {% set url = current_url %}
-{% set desc %}{{ data.fulltitle|raw }}, Download lagu {{ data.fulltitle|raw }}, Free Download {{ data.fulltitle|raw }} Mp3, Video {{ data.fulltitle|raw }}, Download Lagu {{ data.fulltitle|raw }}, Music Video {{ data.fulltitle|raw }}, {{ data.description|replace({"\n":' ', "\r":' '})|raw }}{% endset %}
-{% set kw %}{{ data.fulltitle|raw }},Download {{ data.fulltitle|raw }} Mp3,lagu {{ data.fulltitle|raw }},{{ data.fulltitle|raw }} mp3,lirik lagu {{ data.fulltitle|raw }}, music video {{ data.fulltitle|raw }}, download {{ data.fulltitle|raw }} free song{% endset %}
+{% set desc %}{{ data.fulltitle }}, Download lagu {{ data.fulltitle }}, Free Download {{ data.fulltitle }} Mp3, Video {{ data.fulltitle }}, Download Lagu {{ data.fulltitle }}, Music Video {{ data.fulltitle }}, {{ data.description|replace({"\n":' ', "\r":' '}) }}{% endset %}
+{% set kw %}{{ data.fulltitle }},Download {{ data.fulltitle }} Mp3,lagu {{ data.fulltitle }},{{ data.fulltitle }} mp3,lirik lagu {{ data.fulltitle }}, music video {{ data.fulltitle }}, download {{ data.fulltitle }} free song{% endset %}
 {% set ogimage %}
 &lt;meta property="og:image" content="https://ytimg.googleusercontent.com/vi/{{ data.video_id }}/hqdefault.jpg"&gt;
 {% endset %}
