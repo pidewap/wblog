@@ -105,7 +105,7 @@ echo '
 &lt;/table&gt;
 &lt;/div&gt;
       {% endfor %}
-      &lt;center&gt;&lt;a class="btn-load" href="/tophits.html"&gt;More&lt;/a&gt;&lt;/center&gt;
+      &lt;center&gt;&lt;a class="btn-load" href="/toplist.html"&gt;More&lt;/a&gt;&lt;/center&gt;
     {% endif %}
   &lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Audio Categories&lt;/h3&gt;
 &lt;div class="notifin"&gt;Categories based on popular pages by users.&lt;/div&gt;
