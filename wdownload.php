@@ -38,7 +38,7 @@ echo '
     {% if data %}
   &lt;div class="wrapper"&gt;&lt;div class="menu-home"&gt;&lt;h2 class="title-menu"&gt;Download Section&lt;/h2&gt;
 &lt;div class="notifin"&gt;
-Download &lt;strong&gt;{{ data.fulltitle|raw }}&lt;/strong&gt; as video and song. This content is free of copyright, &lt;b&gt;WBlog&lt;/b&gt; is a free search engine.
+Download &lt;strong&gt;{{ data.fulltitle|raw }}&lt;/strong&gt; as video and song. This content is free of copyright, &lt;b&gt;WBlog&lt;/b&gt; is a search engine based on internet result.
 &lt;/div&gt;
   &lt;div class="menulist"&gt;
 &lt;div style="border-top:0px dashed #ddd;margin:20px 0px 5px;padding:5px 3px;"&gt;&lt;div id="play" align="center"&gt;
