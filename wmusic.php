@@ -33,7 +33,7 @@ echo '
 
 {{ block( 'search' ) }}
 &lt;div class="wrapper"&gt;&lt;div class="menu-home"&gt;&lt;h2 class="title-menu"&gt;Search Result&lt;/h2&gt;
-  &lt;div class="notifin"&gt;Our system detected that you try to find a content. Free download entitled &lt;b&gt;{{ search_term|title }}&lt;/b&gt; as video and song. This free download was based on internet.&lt;/div&gt;
+  &lt;div class="notifin"&gt;Search result appear based on your keyword, this result generating from other source and you can download it as video or audio files. Free download on keywords &lt;b&gt;{{ search_term|title }}&lt;/b&gt; as a video or audio/song.&lt;/div&gt;
     {% if videos|length &gt; 0 %}
             {% for video in videos|slice(0, 20) %}
           &lt;div class="menulist"&gt;
