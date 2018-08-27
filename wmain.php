@@ -107,8 +107,8 @@ echo '
       {% endfor %}
       &lt;center&gt;&lt;a class="btn-load" href="/toplist.html"&gt;More&lt;/a&gt;&lt;/center&gt;
     {% endif %}
-  &lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Audio Categories&lt;/h3&gt;
-&lt;div class="notifin"&gt;Categories based on popular pages by users.&lt;/div&gt;
+  &lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Song Categories&lt;/h3&gt;
+&lt;div class="notifin"&gt;This is the popular search by users, not all categories appear. You must use search bar to find any content from all around of internet.&lt;/div&gt;
     &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
