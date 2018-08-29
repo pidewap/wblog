@@ -25,7 +25,7 @@ function my_get_google_hot_trend($country_code) {
         'error' => '' 
     ); 
 
-    $res = xrvel_curl('http://www.google.com/trends/hottrends/widget?pn='.$country_code.'&tn=10&h=413'); 
+    $res = xrvel_curl('http://www.google.com/trends/hottrends/widget?pn='.$country_code.'&tn=20&h=413'); 
 
     if ($res == '') { 
         $result['error'] = 'Failed. Empty response.'; 
@@ -45,7 +45,7 @@ function my_get_google_hot_trend($country_code) {
 
 $keyword = my_get_google_hot_trend('p19'); 
 
-echo '<textarea>{% set top = {
+echo '<textarea>{% set topsearch = {
 ';
 foreach ($keyword['data'] as &$value) {
     $n=rand(0,100000);
@@ -55,4 +55,3 @@ echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$value)).'"},
 echo '
 } %}</textarea>';
 ?>
-?> 
