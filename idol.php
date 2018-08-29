@@ -44,12 +44,15 @@ function my_get_google_hot_trend($country_code) {
 } 
 
 $keyword = my_get_google_hot_trend('p19'); 
-$n=rand(0,100000);
-echo '<textarea>';
+
+echo '<textarea>{% set top = {
+';
 foreach ($keyword['data'] as &$value) {
+    $n=rand(0,100000);
 echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$value)).'"},
 ';
 }
-echo '</textarea>';
+echo '
+} %}</textarea>';
 ?>
 ?> 
