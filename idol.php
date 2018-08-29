@@ -1,12 +1,4 @@
 <?php 
-
-$keyword = my_get_google_hot_trend('p19'); 
-echo '<pre>'; 
-print_r($keyword['data']); 
-echo '</pre>'; 
-
-////////////// 
-
 function xrvel_curl($url) { 
     $ch = curl_init(); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
@@ -50,4 +42,14 @@ function my_get_google_hot_trend($country_code) {
     $result['data'] = $keywords; 
     return $result; 
 } 
+
+$keyword = my_get_google_hot_trend('p19'); 
+$n=rand(0,100000);
+echo '<textarea>';
+foreach ($keyword['data'] as &$value) {
+echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$value)).'"},
+';
+}
+echo '</textarea>';
+?>
 ?> 
