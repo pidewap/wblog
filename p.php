@@ -1,4 +1,5 @@
-<?php
+<textarea>
+  <?php
 $content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
@@ -15,3 +16,4 @@ echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$title)).'", arti
 echo '
 } %}';
 ?>
+</textarea>
