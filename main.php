@@ -9,7 +9,7 @@
 {% endset %}
 {% set title = 'BeLagu - Lookup a New Song from Around World' %}
 <?php
-$content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=15/xml'); 
+$content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=15/json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
