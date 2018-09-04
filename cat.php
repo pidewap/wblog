@@ -1,7 +1,7 @@
 <?php
 if($_GET['id'] == 'top'){
 $form='https://wap4.co/site/4770/pack/81350?action=edit';
-            $linkurl='https://itunes.apple.com/id/rss/topsongs/limit=15/xml';
+            $linkurl='https://itunes.apple.com/id/rss/topsongs/limit=15/json';
             $ltitle='TOP List - BeLagu';
 }
 if($_GET['id'] == 'dangdut'){
