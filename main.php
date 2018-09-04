@@ -9,7 +9,7 @@
 {% endset %}
 {% set title = 'BeLagu - Lookup a New Song from Around World' %}
 <?php
-$content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=15/json'); 
+$content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=15/xml'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
@@ -27,7 +27,7 @@ echo '
 ?>
 
 <?php
-$icontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1259/json'); 
+$icontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=10/genre=1259/json'); 
 $itop_albums=json_decode($icontent);
 $itracks = $itop_albums->feed->entry;
 echo '{% set indo = {
@@ -46,7 +46,7 @@ echo '
 
 
 <?php
-$dcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1274/json'); 
+$dcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=10/genre=1274/json'); 
 $dtop_albums=json_decode($dcontent);
 $dtracks = $dtop_albums->feed->entry;
 echo '{% set dangdut = {
