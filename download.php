@@ -66,7 +66,7 @@ echo '
 } %}';
 ?>
                   <?php
-$content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=15/json'); 
+$content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=15/xml'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
