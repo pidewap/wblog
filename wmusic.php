@@ -117,7 +117,7 @@ echo '
         &lt;small&gt;No videos found with "{{ search_term }}" term.&lt;/small&gt;
     {% endif %}
 &lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Song Categories&lt;/h3&gt;
-&lt;div class="notifin"&gt;Search result appear based on your keyword, this result generating from other source and you can download it as video or audio files. Free download on keywords &lt;b&gt;{{ search_term|title }}&lt;/b&gt; as a video or audio/song.&lt;/div&gt;
+&lt;div class="notifin"&gt;This is the popular search by users, not all categories appear. You must use search bar to find any content from all around of internet.&lt;/div&gt;
     &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
