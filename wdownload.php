@@ -1,4 +1,4 @@
-<a href="/wmain.php">wmain.php</a>||<a href="/wmusic.php">wmusic.php</a>||<a href="/wdownload.php">wdownload.php</a><br><br>
+<a href="/wmain.php">wmain.php</a>||<a href="/wmusic.php">wmusic.php</a>||<a href="/wdownload.php">wdownload.php</a>||<a href="/wcat.php?id=top">wcat.php</a><br><br>
 
 <form class="pure-form pure-form-stacked" action="https://wap4.co/site/4774/pack/81423?tab=file_edit&amp;file=%2Fdownload" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set title = 'Download ' ~ data.fulltitle ~ ' - WBlog' %}
