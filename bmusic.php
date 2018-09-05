@@ -7,7 +7,6 @@
 {% for vi in videos|slice(0, 1) %}
 &lt;meta property="og:image" content="https://ytimg.googleusercontent.com/vi/{{ vi.video_id }}/hqdefault.jpg"&gt;{% endfor %}
 {% endset %}
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4775/pack/81430?tab=file_edit&amp;file=%2Fmusic" method="post">
 <?php 
 function xrvel_curl($url) { 
     $ch = curl_init(); 
