@@ -1,4 +1,4 @@
-<a href="/main.php">main.php</a>||<a href="/music.php">music.php</a>||<a href="/download.php">download.php</a><br><br>
+<a href="/main.php">main.php</a>||<a href="/music.php">music.php</a>||<a href="/download.php">download.php</a>||<a href="/cat.php?id=top">cat.php</a><br><br>
 
 <form class="pure-form pure-form-stacked" action="https://wap4.co/site/4770/pack/81041?tab=file_edit&amp;file=%2Fdownload" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set title = 'Download ' ~ data.fulltitle ~ ' - BeLagu' %}
