@@ -1,4 +1,4 @@
-<a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bdownload.php">bdownload.php</a>||<a href="/bcat.php">bcat.php</a><br><br>
+<a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bcat.php">bcat.php</a><br><br>
 
 <form class="pure-form pure-form-stacked" action="/site/4775/pack/81430?tab=file_edit&amp;file=%2Fmusic" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'Download semua lagu MP3 ' ~ search_term|title ~ ' full album dan juga video dengan gratis dan mudah, unduh musik video ' ~ search_term|title ~ ' terbaru dengan sekali klik' %}
