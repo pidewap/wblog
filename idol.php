@@ -25,7 +25,7 @@ function my_get_google_hot_trend($country_code) {
         'error' => '' 
     ); 
 
-    $res = xrvel_curl('http://www.google.com/trends/hottrends/widget?pn='.$country_code.'&tn=50&h=413'); 
+    $res = xrvel_curl('http://www.google.com/trends/hottrends/widget?pn='.$country_code.'&tn=30&h=413'); 
 
     if ($res == '') { 
         $result['error'] = 'Failed. Empty response.'; 
