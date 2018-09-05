@@ -1,6 +1,5 @@
 <a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bdownload.php">bdownload.php</a>||<a href="/bcat.php">bcat.php</a><br><br>
-
-<form class="pure-form pure-form-stacked" action="/site/4775/pack/81430?tab=file_edit&amp;file=%2F" method="post">
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4775/pack/81430?tab=file_edit&amp;file=%2F" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'Bursa MP3, Download Lagu, Download MP3 Band Indie, Download Lagu Gratis, Download Video Terbaru, Hits Musik Barat' %}
 {% set ogimage %}
 {% for vi in videos|slice(0, 1) %}
@@ -33,7 +32,7 @@ echo '
 &lt;div align="left"&gt;
   &lt;div id="k"&gt;
 &lt;div class="note2" style="margin:3px;align:left;"&gt;&lt;a href="/"&gt;&lt;b&gt;Bursa MP3&lt;/b&gt;&lt;/a&gt; adalah mesin pencari video terlengkap yang bisa disimpan dan dikonversi menjadi MP3 atau lagu. Sistem situs otomatis menelusuri konten paling relevan dan mengambilnya untuk ditampilkan kepada pengunjung.&lt;/div&gt;
-&lt;a href="/itunes.php?id=27" title="Daftar Lagu J-POP"&gt;&lt;button class="bt" type="submit"&gt;J-POP&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=1262" title="Daftar Lagu India"&gt;&lt;button class="bt" type="submit"&gt;India&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=29" title="Daftar Lagu Anime"&gt;&lt;button class="bt" type="submit"&gt;Anime&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=21" title="Daftar Lagu Rock"&gt;&lt;button class="bt" type="submit"&gt;Rock&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=18" title="Daftar Lagu RAP"&gt;&lt;button class="bt" type="submit"&gt;RAP&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=51" title="Daftar Lagu K-POP"&gt;&lt;button class="bt" type="submit"&gt;K-POP&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=1274" title="Daftar Lagu Dangdut"&gt;&lt;button class="bt" type="submit"&gt;Dangdut&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=1197" title="Daftar Lagu Arab"&gt;&lt;button class="bt" type="submit"&gt;Arab&lt;/button&gt;&lt;/a&gt; &lt;a href="/itunes.php?id=24" title="Daftar Lagu Reggae"&gt;&lt;button class="bt" type="submit"&gt;Reggae&lt;/button&gt;&lt;/a&gt;
+&lt;a href="/jpop.html" title="Daftar Lagu J-POP"&gt;&lt;button class="bt" type="submit"&gt;J-POP&lt;/button&gt;&lt;/a&gt; &lt;a href="/india.html" title="Daftar Lagu India"&gt;&lt;button class="bt" type="submit"&gt;India&lt;/button&gt;&lt;/a&gt; &lt;a href="/anime.html" title="Daftar Lagu Anime"&gt;&lt;button class="bt" type="submit"&gt;Anime&lt;/button&gt;&lt;/a&gt; &lt;a href="kpop.html" title="Daftar Lagu K-POP"&gt;&lt;button class="bt" type="submit"&gt;K-POP&lt;/button&gt;&lt;/a&gt; &lt;a href="/dangdut.html" title="Daftar Lagu Dangdut"&gt;&lt;button class="bt" type="submit"&gt;Dangdut&lt;/button&gt;&lt;/a&gt; &lt;a href="/malaysia.html" title="Daftar Lagu Malaysia"&gt;&lt;button class="bt" type="submit"&gt;Malaysia&lt;/button&gt;&lt;/a&gt; &lt;a href="/barat.html" title="Daftar Lagu Barat"&gt;&lt;button class="bt" type="submit"&gt;Barat&lt;/button&gt;&lt;/a&gt;
   &lt;/div&gt;
   &lt;/div&gt;
 
