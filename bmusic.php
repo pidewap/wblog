@@ -1,12 +1,12 @@
 <a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bcat.php?id=top">bcat.php</a><br><br>
-
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4775/pack/81430?tab=file_edit&amp;file=%2Fmusic" method="post">
-                <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'Download semua lagu MP3 ' ~ search_term|title ~ ' full album dan juga video dengan gratis dan mudah, unduh musik video ' ~ search_term|title ~ ' terbaru dengan sekali klik' %}
+<textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'Download semua lagu MP3 ' ~ search_term|title ~ ' full album dan juga video dengan gratis dan mudah, unduh musik video ' ~ search_term|title ~ ' terbaru dengan sekali klik' %}
 {% set title = 'Download ' ~ search_term|title ~ ' [Lagu MP3 + Video] - Bursa MP3' %}
 {% set kw %}{{ search_term|title }},Download {{ search_term|title }} Mp3,lagu {{ search_term|title }},{{ search_term|title }} mp3,lirik lagu {{ search_term|title }}, music video {{ search_term|title }}, download {{ search_term|title }} free song{% endset %}
 {% set ogimage %}
 {% for vi in videos|slice(0, 1) %}
 &lt;meta property="og:image" content="https://ytimg.googleusercontent.com/vi/{{ vi.video_id }}/hqdefault.jpg"&gt;{% endfor %}
+{% endset %}
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4775/pack/81430?tab=file_edit&amp;file=%2Fmusic" method="post">
 <?php 
 function xrvel_curl($url) { 
     $ch = curl_init(); 
@@ -102,8 +102,7 @@ echo '
 &lt;h3 class="title"&gt;Pencarian Populer&lt;/h3&gt;
 &lt;div id="indie"&gt;&lt;div class="menu"&gt;
 {% for vidd in top|slice(0, 15) %}
-    &lt;a href="/music/{{ vidd.title|lower|replace({'  ':"-",' ':"-"}) }}"&gt;{{ vidd.title }}&lt;/a&gt;
-   {% endfor %}
+    &lt;a href="/music/{{ vidd.title|lower|replace({'  ':"-",' ':"-"}) }}"&gt;{{ vidd.title }}&lt;/a&gt;  &amp;middot;{% endfor %}
     &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     {% endif %}
 &lt;/div&gt;
