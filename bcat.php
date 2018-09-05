@@ -1,4 +1,4 @@
-<a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bcat.php">bcat.php</a><br><br>
+<a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bcat.php?id=top">bcat.php</a><br><br>
 
 <?php
 if($_GET['id'] == 'top'){
@@ -47,7 +47,7 @@ $form='https://wap4.co/site/4775/pack/83002?action=edit';
             $ltitle='Malaysia Pop';
 }
 ?>
-<a href="?id=top">top</a>||<a href="?id=kpop">kpop</a>||<a href="?id=jpop">jpop</a>||<a href="?id=cpop">cpop</a>||<a href="?id=dangdut">dangdut</a>||<a href="?id=anime">anime</a>||<a href="?id=india">india</a>||<a href="?id=indo">indo</a>||<a href="?id=malay">malay</a>||<br><br>
+<a href="?id=top">top</a>||<a href="?id=kpop">kpop</a>||<a href="?id=jpop">jpop</a>||<a href="?id=cpop">cpop</a>||<a href="?id=dangdut">dangdut</a>||<a href="?id=anime">anime</a>||<a href="?id=india">india</a>||<a href="?id=barat">barat</a>||<a href="?id=malay">malay</a>||<br><br>
 
 <form class="pure-form pure-form-stacked" action="<?php echo $form; ?>" method="post">
 
