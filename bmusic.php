@@ -101,7 +101,7 @@ echo '
     &lt;div id="k"&gt;
 &lt;h3 class="title"&gt;Pencarian Populer&lt;/h3&gt;
 &lt;div id="indie"&gt;&lt;div class="menu"&gt;
-{% for vidd in top|slice(0, 15) %}
+{% for vidd in top|slice(0, 30) %}
     &lt;a href="/music/{{ vidd.title|lower|replace({'  ':"-",' ':"-"}) }}"&gt;{{ vidd.title }}&lt;/a&gt;  &amp;middot;{% endfor %}
     &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     {% endif %}
