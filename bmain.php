@@ -1,6 +1,6 @@
 <a href="/bmain.php">bmain.php</a>||<a href="/bmusic.php">bmusic.php</a>||<a href="/bcat.php?id=top">bcat.php</a><br><br>
 <form class="pure-form pure-form-stacked" action="https://wap4.co/site/4775/pack/81430?tab=file_edit&amp;file=%2F" method="post">
-                <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = 'Bursa MP3, Download Lagu, Download MP3 Band Indie, Download Lagu Gratis, Download Video Terbaru, Hits Musik Barat' %}
+                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display:none;" rows="35">{% set desc = 'Bursa MP3, Download Lagu, Download MP3 Band Indie, Download Lagu Gratis, Download Video Terbaru, Hits Musik Barat' %}
 {% set title = 'Bursa MP3 - Zona Lengkap MP3 &amp; Video' %}
 {% set ogimage %}
 {% for vi in videos|slice(0, 1) %}
