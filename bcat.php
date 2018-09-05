@@ -51,7 +51,7 @@ $form='https://wap4.co/site/4775/pack/83002?action=edit';
 
 <form class="pure-form pure-form-stacked" action="<?php echo $form; ?>" method="post">
 
-            <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc = '<?php echo $ltitle; ?>, Bursa MP3, Download Lagu, Download MP3 Band Indie, Download Lagu Gratis, Download Video Terbaru, Hits Musik Barat' %}
+            <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display:none;" rows="35">{% set desc = '<?php echo $ltitle; ?>, Bursa MP3, Download Lagu, Download MP3 Band Indie, Download Lagu Gratis, Download Video Terbaru, Hits Musik Barat' %}
 {% set title = '<?php echo $ltitle; ?> - Bursa MP3' %}
 
 <?php
