@@ -1,6 +1,6 @@
 <a href="/hmain.php">hmain.php</a>||<a href="/hmusic.php">hmusic.php</a>||<a href="/hdownload.php">hdownload.php</a>||<a href="/hcat.php?id=top">hcat.php</a><br><br>
 
-<form class="pure-form pure-form-stacked" action="/site/4769/pack/81031?tab=file_edit&amp;file=%2Fmusic" method="post">
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4769/pack/81031?tab=file_edit&amp;file=%2Fmusic" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px" rows="35">{% set desc %}{{ search_term|title }}, Download lagu {{ search_term|title }}, Free Download {{ search_term|title }} Mp3, Video {{ search_term|title }}, Download Lagu {{ search_term|title }}, Music Video {{ search_term|title }}{% endset %}
 {% set kw %}{{ search_term|title }},Download {{ search_term|title }} Mp3,lagu {{ search_term|title }},{{ search_term|title }} mp3,lirik lagu {{ search_term|title }}, music video {{ search_term|title }}, download {{ search_term|title }} free song{% endset %}
 {% set ogimage %}
