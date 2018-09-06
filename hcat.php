@@ -78,7 +78,7 @@ echo '
 
 {{ block( 'search' ) }}
   
-  &lt;div class="wrapper"&gt;&lt;div class="menu-home"&gt;&lt;h2 class="title-menu"&gt;<?php echo str_replace(' - BeLagu','',$ltitle); ?> - 100 Music&lt;/h2&gt;
+  &lt;div class="wrapper"&gt;&lt;div class="menu-home"&gt;&lt;h2 class="title-menu"&gt;<?php echo str_replace(' - HarianLagu','',$ltitle); ?> - 100 Music&lt;/h2&gt;
 &lt;div class="notifin"&gt;Latest update on: <?php echo date("l, Y-m-d"); ?>&lt;/div&gt;
   
   {% if top|length &gt; 0 %}
