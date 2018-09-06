@@ -96,13 +96,13 @@ echo '
       {% endfor %}
     {% endif %}
   
-  &lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Audio Categories&lt;/h3&gt;
-&lt;div class="notifin"&gt;Categories based on popular pages by users.&lt;/div&gt;
+  &lt;/div&gt;&lt;div class="menu-sidebar"&gt;
+                          &lt;h3 class="title-menu"&gt;Kategori Lagu&lt;/h3&gt;
     &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
 &lt;td valign="top"&gt;
-&lt;div style="font-size:14px;"&gt;» &lt;a href="/toplist.html" title="TOP List"&gt;TOP List&lt;/a&gt;&lt;/div&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/toplist.html" title="TOP List"&gt;Top Indo&lt;/a&gt;&lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -162,7 +162,7 @@ echo '
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
 &lt;td valign="top"&gt;
-&lt;div style="font-size:14px;"&gt;» &lt;a href="/anime.html" title="Anime"&gt;Anime&lt;/a&gt;&lt;/div&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/anime.html" title="Anime"&gt;OST Anime&lt;/a&gt;&lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -172,7 +172,7 @@ echo '
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
 &lt;td valign="top"&gt;
-&lt;div style="font-size:14px;"&gt;» &lt;a href="/indo.html" title="Indo Pop"&gt;Indo Pop&lt;/a&gt;&lt;/div&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/barat.html" title="Lagu Barat"&gt;Lagu Barat&lt;/a&gt;&lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -182,12 +182,13 @@ echo '
 &lt;tr valign="middle"&gt;
 &lt;td valign="top"&gt;&lt;/td&gt;
 &lt;td valign="top"&gt;
-&lt;div style="font-size:14px;"&gt;» &lt;a href="/malay.html" title="Malay Pop"&gt;Malay Pop&lt;/a&gt;&lt;/div&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/malay.html" title="Malaysia"&gt;Malaysia&lt;/a&gt;&lt;/div&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
+
     
     &lt;/div&gt;&lt;/div&gt;
     {{ block( 'footer' ) }}
