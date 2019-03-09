@@ -1,12 +1,12 @@
 <a href="/wmain.php">wmain.php</a>||<a href="/wmusic.php">wmusic.php</a>||<a href="/wdownload.php">wdownload.php</a>||<a href="/wcat.php?id=top">wcat.php</a><br><br>
- 
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4774/pack/81423?tab=file_edit&file=%2Fdownload" method="post">
+
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4774/pack/81423?tab=file_edit&amp;file=%2Fdownload" method="post">
                 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;display: none" rows="35">{% set title = 'Download ' ~ data.fulltitle ~ ' - WBlog' %}
 {% set url = current_url %}
 {% set desc %}{{ data.fulltitle }}, Download lagu {{ data.fulltitle }}, Free Download {{ data.fulltitle }} Mp3, Video {{ data.fulltitle }}, Download Lagu {{ data.fulltitle }}, Music Video {{ data.fulltitle }}, {{ data.description|replace({"\n":' ', "\r":' '}) }}{% endset %}
 {% set kw %}{{ data.fulltitle }},Download {{ data.fulltitle }} Mp3,lagu {{ data.fulltitle }},{{ data.fulltitle }} mp3,lirik lagu {{ data.fulltitle }}, music video {{ data.fulltitle }}, download {{ data.fulltitle }} free song{% endset %}
 {% set ogimage %}
-<meta property="og:image" content="https://ytimg.googleusercontent.com/vi/{{ data.video_id }}/hqdefault.jpg">
+&lt;meta property="og:image" content="https://ytimg.googleusercontent.com/vi/{{ data.video_id }}/hqdefault.jpg"&gt;
 {% endset %}
 <?php 
 function xrvel_curl($url) { 
@@ -28,33 +28,33 @@ function xrvel_curl($url) {
     unset($ch); 
     return $res; 
 } 
- 
+
 function my_get_google_hot_trend($country_code) { 
     $result = array( 
         'data' => array(), 
         'error' => '' 
     ); 
- 
+
     $res = xrvel_curl('http://www.google.com/trends/hottrends/widget?pn='.$country_code.'&tn=50&h=413'); 
- 
+
     if ($res == '') { 
         $result['error'] = 'Failed. Empty response.'; 
         return $result; 
     } 
- 
+
     if (!preg_match_all("/\<span class='widget-title-in-list'\>(.*)\<\/span\>\<\/span\>\<span class='widget-list-more-arrow/siU", $res, $match)) { 
         $result['error'] = 'Failed to parse.'; 
         return $result; 
     } 
- 
+
     $keywords = $match[1]; 
- 
+
     $result['data'] = $keywords; 
     return $result; 
 } 
- 
+
 $keyword = my_get_google_hot_trend('p19'); 
- 
+
 echo '{% set topsearch = {
 ';
 foreach ($keyword['data'] as &$value) {
@@ -83,173 +83,173 @@ echo '
 } %}';
 ?>
 {% use '_blocks' %}
- 
+
 {{ block( 'head_tags' ) }}
- 
-<body>
- 
+
+&lt;body&gt;
+
 {{ block( 'header' ) }}
 {{ block( 'search' ) }}
- 
- 
+
+
     {% if data %}
-  <div class="wrapper"><div class="menu-home"><h2 class="title-menu">Download Section</h2>
-<div class="notifin">
-Download <strong>{{ data.fulltitle|raw }}</strong> as video and song. This content is free of copyright, <b>WBlog</b> is a search engine based on internet result.
-</div>
-  <div class="menulist">
-<div style="border-top:0px dashed #ddd;margin:20px 0px 5px;padding:5px 3px;"><div id="play" align="center">
-<center>
-<img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/1.jpg" alt="Thumbnail 1"><img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/2.jpg" alt="Thumbnail 2"><img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/3.jpg" alt="Thumbnail 3">
-<br>
-<br>
-<iframe src="https://www.youtube.com/embed/{{ data.video_id }}" frameborder="0" width="80%" height="100%" allowfullscreen=""></iframe></center>
-</div></div><center><a href="http://facebook.com/dialog/feed?display=touch&amp;app_id=163741137001917&amp;redirect_uri=http%3A%2F%2Ffacebook.com&amp;caption=WBlog&amp;link={{ url }}" title="Share {{ data.fulltitle }} to Facebook" target="_blank"><img alt="Facebook" src="https://1.bp.blogspot.com/-rn6pUAdkiXk/WlhctuPnuxI/AAAAAAAABHk/1qs3xQWDp-szAsZdJjM-zinFQuwee0KtgCEwYBhgL/s1600/share%2Bto%2Bfacebook.png" height="28"></a>
-<a href="https://twitter.com/share?url={{ url }}&amp;text=WBlog - Download {{ data.fulltitle|raw }}&amp;related=http://wblog.viwap.com" title="Share {{ data.fulltitle }} to Twitter" target="_blank"><img alt="Twitter" src="https://4.bp.blogspot.com/-BryZVrdqJ5A/WCyEgpI-s8I/AAAAAAAAAbs/WY5OddyZ7BMQ0Fl2x9bh3WI3UXbpEPEdQCPcBGAYYCw/s1600/twitter.png" height="28"></a>
-<a href="http://plus.google.com/share?url={{ url }}" title="Share {{ data.fulltitle|raw }} to Google+" target="_blank"><img alt="Google+" src="https://4.bp.blogspot.com/-kUvdCZ1WdHw/WlhdTgwryEI/AAAAAAAABHw/c6bFvqM1wuAh9_OBONMRNW6lc6VVk5RFQCEwYBhgL/s1600/share%2Bto%2Bgoogle-plus.png" height="28"></a> <a href="http://pinterest.com/pin/create/button/?url={{ url }}&amp;description=Download {{ data.fulltitle }}" title="Share {{ data.fulltitle }} to Pinterest" target="_blank"><img alt="Pinterest" src="https://2.bp.blogspot.com/-1f4Co4h4FjM/Wlhd_rDk_XI/AAAAAAAABIA/FF-SZZqGiLEo6PDYsJi6-_UGwVjBJPk0gCEwYBhgL/s1600/share%2Bto%2Bpinterest.png" height="28"></a></center><h3 class="pageku"><center>{{ data.fulltitle }}</center></h3>
-    <table style="font-size:14px;padding:2px;" width="100%"><tbody><tr valign="top"><td width="30%">Name</td><td>:</td><td><b>{{ data.fulltitle }}</b></td></tr><tr valign="top"><td width="30%">Category</td><td>:</td><td><b>{{ data.categories.0|raw }}</b></td></tr><tr valign="top"><td width="30%">Artist</td><td>:</td><td><b><a href="/music/{{ data.uploader|raw }}" target="_blank" title="Free Download All {{ data.uploader|raw }}">{{ data.uploader|raw }}</a></b></td></tr><tr valign="top"><td width="30%">Date</td><td>:</td><td>{{ data.upload_date|date('Y M d') }}</td></tr><tr valign="top"><td width="30%">Duration</td><td>:</td><td>{{ data.duration|gmdate('H:i:s') }}</td></tr><tr valign="top"><td width="30%">Size</td><td>:</td><td>Based Quality</td></tr><tr valign="top"><td width="30%">Rate</td><td>:</td><td>-</td></tr><tr valign="top"><td width="30%">Hits</td><td>:</td><td>-</td></tr><tr valign="top"><td width="30%">Encoder</td><td>:</td><td>PideWAP</td></tr></tbody></table>
-    <br> <a class="btn-cloud" rel="nofollow" href="http://dolohen.com/afu.php?zoneid=2479541">FAST DOWNLOAD</a>
-     <a class="btn-cloud" rel="nofollow" href="https://cdn-waphan.herokuapp.com/adl.php?id={{ data.video_id }}&type=mp4">Download 360p - mp4</a><a class="btn-cloud" rel="nofollow" href="https://cdn-waphan.herokuapp.com/adl.php?id={{ data.video_id }}&type=m4a">Download mp3 - 128kbps</a><a class="btn-cloud" rel="nofollow" href="https://www.convertmp3.io/fetch/?video=https://www.youtube.com/watch?v={{ data.video_id }}">ALTERNATIVE LINK (mp3)</a></div>
- 
-<div class="notifin">Free download video and song entitled <strong>{{ data.fulltitle|raw }}</strong> from <b>WBlog</b> search engine. Content is automatically generated by system.</div>
- 
-<div class="title-menu"><b>Share</b></div>
-    <center>URL Code<br><textarea>{{ url }}</textarea><br>Forum Code<br> <textarea>[url={{url }}]Download {{ data.fulltitle|raw }}[/url]</textarea><br>HTML Code<br><textarea>&lt;a href="{{ url }}"&gt;Download {{ data.fulltitle|raw }}&lt;/a&gt;</textarea></center>
+  &lt;div class="wrapper"&gt;&lt;div class="menu-home"&gt;&lt;h2 class="title-menu"&gt;Download Section&lt;/h2&gt;
+&lt;div class="notifin"&gt;
+Download &lt;strong&gt;{{ data.fulltitle|raw }}&lt;/strong&gt; as video and song. This content is free of copyright, &lt;b&gt;WBlog&lt;/b&gt; is a search engine based on internet result.
+&lt;/div&gt;
+  &lt;div class="menulist"&gt;
+&lt;div style="border-top:0px dashed #ddd;margin:20px 0px 5px;padding:5px 3px;"&gt;&lt;div id="play" align="center"&gt;
+&lt;center&gt;
+&lt;img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/1.jpg" alt="Thumbnail 1"&gt;&lt;img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/2.jpg" alt="Thumbnail 2"&gt;&lt;img width="50px" src="http://i.ytimg.com/vi/{{ data.video_id }}/3.jpg" alt="Thumbnail 3"&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;iframe src="https://www.youtube.com/embed/{{ data.video_id }}" frameborder="0" width="80%" height="100%" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;center&gt;&lt;a href="http://facebook.com/dialog/feed?display=touch&amp;amp;app_id=163741137001917&amp;amp;redirect_uri=http%3A%2F%2Ffacebook.com&amp;amp;caption=WBlog&amp;amp;link={{ url }}" title="Share {{ data.fulltitle }} to Facebook" target="_blank"&gt;&lt;img alt="Facebook" src="https://1.bp.blogspot.com/-rn6pUAdkiXk/WlhctuPnuxI/AAAAAAAABHk/1qs3xQWDp-szAsZdJjM-zinFQuwee0KtgCEwYBhgL/s1600/share%2Bto%2Bfacebook.png" height="28"&gt;&lt;/a&gt;
+&lt;a href="https://twitter.com/share?url={{ url }}&amp;amp;text=WBlog - Download {{ data.fulltitle|raw }}&amp;amp;related=http://wblog.viwap.com" title="Share {{ data.fulltitle }} to Twitter" target="_blank"&gt;&lt;img alt="Twitter" src="https://4.bp.blogspot.com/-BryZVrdqJ5A/WCyEgpI-s8I/AAAAAAAAAbs/WY5OddyZ7BMQ0Fl2x9bh3WI3UXbpEPEdQCPcBGAYYCw/s1600/twitter.png" height="28"&gt;&lt;/a&gt;
+&lt;a href="http://plus.google.com/share?url={{ url }}" title="Share {{ data.fulltitle|raw }} to Google+" target="_blank"&gt;&lt;img alt="Google+" src="https://4.bp.blogspot.com/-kUvdCZ1WdHw/WlhdTgwryEI/AAAAAAAABHw/c6bFvqM1wuAh9_OBONMRNW6lc6VVk5RFQCEwYBhgL/s1600/share%2Bto%2Bgoogle-plus.png" height="28"&gt;&lt;/a&gt; &lt;a href="http://pinterest.com/pin/create/button/?url={{ url }}&amp;amp;description=Download {{ data.fulltitle }}" title="Share {{ data.fulltitle }} to Pinterest" target="_blank"&gt;&lt;img alt="Pinterest" src="https://2.bp.blogspot.com/-1f4Co4h4FjM/Wlhd_rDk_XI/AAAAAAAABIA/FF-SZZqGiLEo6PDYsJi6-_UGwVjBJPk0gCEwYBhgL/s1600/share%2Bto%2Bpinterest.png" height="28"&gt;&lt;/a&gt;&lt;/center&gt;&lt;h3 class="pageku"&gt;&lt;center&gt;{{ data.fulltitle }}&lt;/center&gt;&lt;/h3&gt;
+    &lt;table style="font-size:14px;padding:2px;" width="100%"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Name&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;&lt;b&gt;{{ data.fulltitle }}&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Category&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;&lt;b&gt;{{ data.categories.0|raw }}&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Artist&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;&lt;b&gt;&lt;a href="/music/{{ data.uploader|raw }}" target="_blank" title="Free Download All {{ data.uploader|raw }}"&gt;{{ data.uploader|raw }}&lt;/a&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Date&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;{{ data.upload_date|date('Y M d') }}&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Duration&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;{{ data.duration|gmdate('H:i:s') }}&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Size&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;Based Quality&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Rate&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Hits&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="30%"&gt;Encoder&lt;/td&gt;&lt;td&gt;:&lt;/td&gt;&lt;td&gt;PideWAP&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;br&gt; &lt;a class="btn-cloud" rel="nofollow" href="http://dolohen.com/afu.php?zoneid=2479541"&gt;FAST DOWNLOAD&lt;/a&gt;
+     &lt;a class="btn-cloud" rel="nofollow" href="https://cdn-waphan.herokuapp.com/adl.php?id={{ data.video_id }}&amp;type=mp4"&gt;Download 360p - mp4&lt;/a&gt;&lt;a class="btn-cloud" rel="nofollow" href="https://cdn-waphan.herokuapp.com/adl.php?id={{ data.video_id }}&amp;type=m4a"&gt;Download mp3 - 128kbps&lt;/a&gt;&lt;a class="btn-cloud" rel="nofollow" href="https://www.convertmp3.io/fetch/?video=https://www.youtube.com/watch?v={{ data.video_id }}"&gt;ALTERNATIVE LINK - mp3&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="notifin"&gt;Free download video and song entitled &lt;strong&gt;{{ data.fulltitle|raw }}&lt;/strong&gt; from &lt;b&gt;WBlog&lt;/b&gt; search engine. Content is automatically generated by system.&lt;/div&gt;
+
+&lt;div class="title-menu"&gt;&lt;b&gt;Share&lt;/b&gt;&lt;/div&gt;
+    &lt;center&gt;URL Code&lt;br&gt;&lt;textarea&gt;{{ url }}&lt;/textarea&gt;&lt;br&gt;Forum Code&lt;br&gt; &lt;textarea&gt;[url={{url }}]Download {{ data.fulltitle|raw }}[/url]&lt;/textarea&gt;&lt;br&gt;HTML Code&lt;br&gt;&lt;textarea&gt;&amp;lt;a href="{{ url }}"&amp;gt;Download {{ data.fulltitle|raw }}&amp;lt;/a&amp;gt;&lt;/textarea&gt;&lt;/center&gt;
   
-    <div class="title-menu"><b>Related Contents</b></div>
-    {% if vsp_last_viewed_videos|length > 0 %}
+    &lt;div class="title-menu"&gt;&lt;b&gt;Related Contents&lt;/b&gt;&lt;/div&gt;
+    {% if vsp_last_viewed_videos|length &gt; 0 %}
     {% for video in vsp_last_viewed_videos|slice(0, 10) %}
-<div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;"><a href="/download/music/{{ video.id }}/linkdownload.html">{{ video.title|raw }}</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
+&lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;&lt;a href="/download/music/{{ video.id }}/linkdownload.html"&gt;{{ video.title|raw }}&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
                     {% endfor %}
     {% endif %}
     
     {% else %}
-        <p>Something went wrong. Please come back later.</p>
+        &lt;p&gt;Something went wrong. Please come back later.&lt;/p&gt;
     {% endif %}
-</div><div class="menu-sidebar"><h3 class="title-menu">Song Categories</h3>
-<div class="notifin">This is the popular search by users, not all categories appear. You must use search bar to find any content from all around of internet.</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/toplist.html" title="TOP List">TOP List</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/dangdut.html" title="Dangdut">Dangdut</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/kpop.html" title="K-POP">K-POP</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/jpop.html" title="J-POP">J-POP</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-  <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/cpop.html" title="C-POP">C-POP</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/india.html" title="India">India</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/anime.html" title="Anime">Anime</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/indo.html" title="Indo Pop">Indo Pop</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;">» <a href="/malay.html" title="Malay Pop">Malay Pop</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
+&lt;/div&gt;&lt;div class="menu-sidebar"&gt;&lt;h3 class="title-menu"&gt;Song Categories&lt;/h3&gt;
+&lt;div class="notifin"&gt;This is the popular search by users, not all categories appear. You must use search bar to find any content from all around of internet.&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/toplist.html" title="TOP List"&gt;TOP List&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/dangdut.html" title="Dangdut"&gt;Dangdut&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/kpop.html" title="K-POP"&gt;K-POP&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/jpop.html" title="J-POP"&gt;J-POP&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+  &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/cpop.html" title="C-POP"&gt;C-POP&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/india.html" title="India"&gt;India&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/anime.html" title="Anime"&gt;Anime&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/indo.html" title="Indo Pop"&gt;Indo Pop&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;» &lt;a href="/malay.html" title="Malay Pop"&gt;Malay Pop&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
     
-    <div class="title-menu">Trending Search</div>
-      {% if top|length > 0 %}
+    &lt;div class="title-menu"&gt;Trending Search&lt;/div&gt;
+      {% if top|length &gt; 0 %}
 {% for video in top|slice(0, 15) %}
-    <div class="menulist"><table><tbody>
-<tr valign="middle">
-<td valign="top"></td>
-<td valign="top">
-<div style="font-size:14px;"><a title="{{ video.title|raw }} - {{ video.artist|raw }}" href="/music/{{ video.title|raw|lower|replace({' ':"-"}) }}-{{ video.artist|raw|lower|replace({' ':"-"}) }}">{{ video.title|raw }} - {{ video.artist|raw }}</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
+    &lt;div class="menulist"&gt;&lt;table&gt;&lt;tbody&gt;
+&lt;tr valign="middle"&gt;
+&lt;td valign="top"&gt;&lt;/td&gt;
+&lt;td valign="top"&gt;
+&lt;div style="font-size:14px;"&gt;&lt;a title="{{ video.title|raw }} - {{ video.artist|raw }}" href="/music/{{ video.title|raw|lower|replace({' ':"-"}) }}-{{ video.artist|raw|lower|replace({' ':"-"}) }}"&gt;{{ video.title|raw }} - {{ video.artist|raw }}&lt;/a&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
       {% endfor %}
       
     {% endif %}
     
     {{ block ('recent_searches') }}
-</div></div>
- 
+&lt;/div&gt;&lt;/div&gt;
+
 {{ block( 'footer' ) }}
- 
-</body></textarea>
+
+&lt;/body&gt;</textarea>
                 <button class="pure-button button-default pure-u-1-1" type="submit">Save file</button>
             </form>
