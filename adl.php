@@ -24,6 +24,13 @@ $urld = $item->id;
 }
 
 
-header ("Location: " . $urld. "");
+function Redirect($url, $permanent = false)
+{
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+
+    exit();
+}
+
+Redirect(''.$urld.'', false);
 ?>
  
