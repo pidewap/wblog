@@ -1,6 +1,6 @@
 <?php 
 
 echo '<pre>';
-echo 'Hellloooo';
+echo '404 Not Found';
 echo '</pre>';
 ?>
