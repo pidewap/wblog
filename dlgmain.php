@@ -46,7 +46,7 @@ $iimg = $itrack->{'im:image'}[0]->label;
   $ititle = $itrack->{'im:name'}->label;
   $iartist = $itrack->{'im:artist'}->label;
 $in=rand(0,100000);
-echo ''.$in.': {title: "'.str_replace(',','',str_replace('"','',$ititle)).'", artist: "'.str_replace(',','',str_replace('"','',$iartist)).'", img: "'.$iimg.'"},
+echo ''.$in.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$ititle)).'", artist: "'.str_replace(',','',str_replace('"','',$iartist)).'", img: "'.$iimg.'"},
 ';
 }
 echo '
@@ -55,7 +55,7 @@ echo '
 
 
 <?php
-$dcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1274/json'); 
+$dcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=20/genre=1274/json'); 
 $dtop_albums=json_decode($dcontent);
 $dtracks = $dtop_albums->feed->entry;
 echo '{% set dangdut = {
@@ -64,8 +64,11 @@ foreach( $dtracks as $dtrack ) {
 $dimg = $dtrack->{'im:image'}[0]->label;
   $dtitle = $dtrack->{'im:name'}->label;
   $dartist = $dtrack->{'im:artist'}->label;
+  $ddate = $dtrack->{'im:releaseDate'}->label;
+  $dadate=date('j F Y', strtotime($ddate));
+  $dcat = $dtrack->{'category'}->attributes->term;
 $dn=rand(0,100000);
-echo ''.$dn.': {title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'"},
+echo ''.$dn.': {title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
 ';
 }
 echo '
