@@ -55,7 +55,7 @@ echo '
 
 
 <?php
-$dcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=20/genre=1274/json'); 
+$dcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=20/genre=1274/json'); 
 $dtop_albums=json_decode($dcontent);
 $dtracks = $dtop_albums->feed->entry;
 echo '{% set dangdut = {
