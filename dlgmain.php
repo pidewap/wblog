@@ -19,7 +19,7 @@ $img = $track->{'im:image'}[0]->label;
   $title = $track->{'im:name'}->label;
   $artist = $track->{'im:artist'}->label;
   $date = $track->{'im:releaseDate'}->label;
-  $adate=date('Y-m-d h:i:s', strtotime($date));
+  $adate=date('j F Y', strtotime($date));
   $cat = $track->{'category'}->attributes->term;
 $n=rand(0,100000);
 echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
