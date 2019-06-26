@@ -9,6 +9,11 @@
 {% endset %}
 {% set title = 'WBlog - Free Entertainment Search Engine to Download' %}
 <?php
+                  function clean($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
 $content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=35/explicit=true/json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
@@ -21,8 +26,9 @@ $img = $track->{'im:image'}[0]->label;
   $date = $track->{'im:releaseDate'}->label;
   $adate=date('j F Y', strtotime($date));
   $cat = $track->{'category'}->attributes->term;
+ 
 $n=rand(0,100000);
-echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
+echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
 ';
 }
 echo '
