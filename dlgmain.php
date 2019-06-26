@@ -11,7 +11,7 @@
 <?php
                   function clean($string) {
    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-
+$string = str_replace('&', '', $string);
    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 $content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=35/explicit=true/json'); 
@@ -35,24 +35,6 @@ echo '
 } %}';
 ?>
 
-<?php
-$icontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=10/genre=1259/json'); 
-$itop_albums=json_decode($icontent);
-$itracks = $itop_albums->feed->entry;
-echo '{% set indo = {
-';
-foreach( $itracks as $itrack ) {
-$iimg = $itrack->{'im:image'}[0]->label;
-  $ititle = $itrack->{'im:name'}->label;
-  $iartist = $itrack->{'im:artist'}->label;
-$in=rand(0,100000);
-echo ''.$in.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$ititle)).'", artist: "'.str_replace(',','',str_replace('"','',$iartist)).'", img: "'.$iimg.'"},
-';
-}
-echo '
-} %}';
-?>
-
 
 <?php
 $dcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=20/genre=1274/json'); 
@@ -68,7 +50,7 @@ $dimg = $dtrack->{'im:image'}[0]->label;
   $dadate=date('j F Y', strtotime($ddate));
   $dcat = $dtrack->{'category'}->attributes->term;
 $dn=rand(0,100000);
-echo ''.$dn.': {title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
+echo ''.$dn.': {url:"'.clean($dartist).'-'.clean($dtitle).'", title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
 ';
 }
 echo '
