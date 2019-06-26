@@ -9,7 +9,7 @@
 {% endset %}
 {% set title = 'WBlog - Free Entertainment Search Engine to Download' %}
 <?php
-$content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=15/json'); 
+$content=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=35/explicit=true/json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '{% set top = {
@@ -18,8 +18,11 @@ foreach( $tracks as $track ) {
 $img = $track->{'im:image'}[0]->label;
   $title = $track->{'im:name'}->label;
   $artist = $track->{'im:artist'}->label;
+  $date = $track->{'im:releaseDate'}->label;
+  $adate=date('Y-m-d h:i:s', strtotime($date));
+  $cat = $track->{'category'}->attributes->term;
 $n=rand(0,100000);
-echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
 ';
 }
 echo '
