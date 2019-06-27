@@ -1,5 +1,6 @@
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/4774/pack/81423?tab=file_edit&amp;file=%2F" method="post">
-                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/5836/pack/113759?action=edit" method="post">
+                <textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">{% set some_variable='123' %}
+
 <?php
                   function clean($string) {
    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
@@ -26,7 +27,8 @@ echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace
 echo '
 } %}';
 ?>
-
+{% block toplagu %}
+{% endblock %}
 
 <?php
 $dcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/genre=1274/json'); 
@@ -48,7 +50,8 @@ echo ''.$dn.': {url:"'.clean($dartist).'-'.clean($dtitle).'", title: "'.str_repl
 echo '
 } %}';
 ?>
-
-</textarea>
+{% block dangdut %}
+{% endblock %}
+  </textarea>
                 <button class="pure-button button-default pure-u-1-1" type="submit">Save file</button>
             </form>
