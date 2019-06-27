@@ -78,7 +78,7 @@ echo '
                   
                   
                                     <?php
-$bcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml'); 
+$bcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'); 
 $btop_albums=json_decode($bcontent);
 $btracks = $btop_albums->feed->entry;
 echo '{% set barat = {
