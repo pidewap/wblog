@@ -78,20 +78,20 @@ echo '
                   
                   
                                     <?php
-$kcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml'); 
-$ktop_albums=json_decode($kcontent);
-$ktracks = $ktop_albums->feed->entry;
-echo '{% set kpop = {
+$bcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml'); 
+$btop_albums=json_decode($bcontent);
+$btracks = $btop_albums->feed->entry;
+echo '{% set barat = {
 ';
-foreach( $ktracks as $ktrack ) {
-$kimg = $ktrack->{'im:image'}[0]->label;
-  $ktitle = $ktrack->{'im:name'}->label;
-  $dartist = $ktrack->{'im:artist'}->label;
-  $kdate = $ktrack->{'im:releaseDate'}->label;
-  $kadate=date('j F Y', strtotime($kdate));
-  $kcat = $ktrack->{'category'}->attributes->term;
+foreach( $btracks as $btrack ) {
+$bimg = $btrack->{'im:image'}[0]->label;
+  $btitle = $btrack->{'im:name'}->label;
+  $bartist = $btrack->{'im:artist'}->label;
+  $bdate = $btrack->{'im:releaseDate'}->label;
+  $badate=date('j F Y', strtotime($bdate));
+  $bcat = $btrack->{'category'}->attributes->term;
 $dn=rand(0,100000);
-echo ''.$dn.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
+echo ''.$dn.': {url:"'.clean($bartist).'-'.clean($btitle).'", title: "'.str_replace(',','',str_replace('"','',$btitle)).'", artist: "'.str_replace(',','',str_replace('"','',$bartist)).'", img: "'.$bimg.'", date: "'.$badate.'", cat: "'.$bcat.'"},
 ';
 }
 echo '
