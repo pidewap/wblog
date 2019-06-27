@@ -52,6 +52,53 @@ echo '
 ?>
 {% block dangdut %}
 {% endblock %}
+                  
+                  <?php
+$kcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/genre=51/json'); 
+$ktop_albums=json_decode($kcontent);
+$ktracks = $ktop_albums->feed->entry;
+echo '{% set kpop = {
+';
+foreach( $ktracks as $ktrack ) {
+$kimg = $ktrack->{'im:image'}[0]->label;
+  $ktitle = $ktrack->{'im:name'}->label;
+  $dartist = $ktrack->{'im:artist'}->label;
+  $kdate = $ktrack->{'im:releaseDate'}->label;
+  $kadate=date('j F Y', strtotime($kdate));
+  $kcat = $ktrack->{'category'}->attributes->term;
+$dn=rand(0,100000);
+echo ''.$dn.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
+';
+}
+echo '
+} %}';
+?>
+{% block kpop %}
+{% endblock %}
+                  
+                  
+                                    <?php
+$kcontent=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml'); 
+$ktop_albums=json_decode($kcontent);
+$ktracks = $ktop_albums->feed->entry;
+echo '{% set kpop = {
+';
+foreach( $ktracks as $ktrack ) {
+$kimg = $ktrack->{'im:image'}[0]->label;
+  $ktitle = $ktrack->{'im:name'}->label;
+  $dartist = $ktrack->{'im:artist'}->label;
+  $kdate = $ktrack->{'im:releaseDate'}->label;
+  $kadate=date('j F Y', strtotime($kdate));
+  $kcat = $ktrack->{'category'}->attributes->term;
+$dn=rand(0,100000);
+echo ''.$dn.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
+';
+}
+echo '
+} %}';
+?>
+{% block barat %}
+{% endblock %}
   </textarea>
                 <button class="pure-button button-default pure-u-1-1" type="submit">Save file</button>
             </form>
