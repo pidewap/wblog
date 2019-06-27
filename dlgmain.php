@@ -62,7 +62,7 @@ echo '{% set kpop = {
 foreach( $ktracks as $ktrack ) {
 $kimg = $ktrack->{'im:image'}[0]->label;
   $ktitle = $ktrack->{'im:name'}->label;
-  $dartist = $ktrack->{'im:artist'}->label;
+  $kartist = $ktrack->{'im:artist'}->label;
   $kdate = $ktrack->{'im:releaseDate'}->label;
   $kadate=date('j F Y', strtotime($kdate));
   $kcat = $ktrack->{'category'}->attributes->term;
