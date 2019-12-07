@@ -40,7 +40,7 @@ if(!empty($_GET['url'])){
   
   $linkdownload=maling($bod, '<br /><br />', '</div>');
   $breaks = array("<br />","<br>","<br/>");  
-    $text = str_ireplace($breaks, "\r\n", $linkdownload);  
+    $text = str_ireplace($breaks, "\n", $linkdownload);  
 $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
   $linkt=maling($bod, 'alt="', '"');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
