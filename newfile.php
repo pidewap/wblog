@@ -46,7 +46,7 @@ $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
 judul : <br/><input type="text" name="judul" value="'.$linkt.'">
 <br>videoid: <br><input type="text" name="videoid" value="'.$linkart.'">
-<br/>content: <br><textarea name="nd">'.$text.'</textarea><br/>
+<br/>content: <br><textarea name="nd">'.preg_replace("/ {2,}/", " ", $text).'</textarea><br/>
 <select name="videocat">
   <option id="cat" value="indo">indo</option>
 <option id="cat" value="kpop">kpop</option>
