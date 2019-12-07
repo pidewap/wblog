@@ -42,7 +42,7 @@ $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
 if(!empty($_GET['url'])){
   
   $linkdownload=maling($bod, '<br /><br />', '</div>');
-  
+  $linkdownload=replace('<br /> ','<br />', $linkdownload);
     $text = br2nl($linkdownload);
 $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
   $linkt=maling($bod, 'alt="', '"');
