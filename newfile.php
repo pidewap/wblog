@@ -1,5 +1,8 @@
 <?php
 error_reporting(0);
+function br2nl( $input ) {
+ return preg_replace('/<br(\s+)?\/?>/i', "\n", $input);
+}
 function maling($content,$start,$end){
 if($content && $start && $end) {
 $r = explode($start, $content);
@@ -39,8 +42,8 @@ $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
 if(!empty($_GET['url'])){
   
   $linkdownload=maling($bod, '<br /><br />', '</div>');
-  $breaks = array("<br />","<br>","<br/>");  
-    $text = str_ireplace($breaks, "\n", $linkdownload);  
+  
+    $text = br2nl($linkdownload);
 $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
   $linkt=maling($bod, 'alt="', '"');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
