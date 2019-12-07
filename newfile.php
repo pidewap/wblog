@@ -44,7 +44,7 @@ if(!empty($_GET['url'])){
   $linkdownload=maling($bod, '<br /><br />', '</div>');
   $linkdownload=str_replace('<br /> ','<br />', $linkdownload);
     $text = br2nl($linkdownload);
-$linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
+$linkart=maling($bod, 'src="https://img.go-lagu.com/', '-180x180.jpeg');
   $linkt=maling($bod, 'alt="', '"');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
 judul : <br/><input type="text" name="judul" value="'.$linkt.'">
