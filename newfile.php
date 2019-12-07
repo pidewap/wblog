@@ -32,7 +32,7 @@ if(!empty($_GET['url'])){
 
 $f=file(''.$urr.'');
 $gg=@implode($f);
-echo htmlspecialchars($gg);
+
 $bod=maling($gg, '<body>', '</body>');
 $bod=str_replace('/page/', '?page=', $bod);
 $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
