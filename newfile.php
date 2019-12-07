@@ -39,13 +39,14 @@ $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
 if(!empty($_GET['url'])){
   
   $linkdownload=maling($bod, '<br /><br />', '</div>');
-  
+  $breaks = array("<br />","<br>","<br/>");  
+    $text = str_ireplace($breaks, "\r\n", $linkdownload);  
 $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
   $linkt=maling($bod, 'alt="', '"');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
 judul : <br/><input type="text" name="judul" value="'.$linkt.'">
 <br>videoid: <br><input type="text" name="videoid" value="'.$linkart.'">
-<br/>content: <br><textarea name="nd">'.$linkdownload.'</textarea><br/>
+<br/>content: <br><textarea name="nd">'.$text.'</textarea><br/>
 <select name="videocat">
   <option id="cat" value="indo">indo</option>
 <option id="cat" value="kpop">kpop</option>
