@@ -38,14 +38,14 @@ $bod=str_replace('/page/', '?page=', $bod);
 $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
 if(!empty($_GET['url'])){
   
-  $linkdownloadd=maling($bod, '<div class="text-center">', '<div class="go-share download">');
-  $linkdownload=maling($linkdownloadd,'<br /><br />','</div>');
+  $linkdownload=maling($bod, '<br /><br />', '</div>');
+  
 $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
   $linkt=maling($bod, 'alt="', '"');
 echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
 judul : <br/><input type="text" name="judul" value="'.$linkt.'">
 <br>videoid: <br><input type="text" name="videoid" value="'.$linkart.'">
-<br/>content: <br><textarea name="nd" value="'.$linkdownload.'"></textarea><br/>
+<br/>content: <br><textarea name="nd">'.$linkdownload.'</textarea><br/>
 <select name="videocat">
   <option id="cat" value="indo">indo</option>
 <option id="cat" value="kpop">kpop</option>
