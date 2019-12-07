@@ -32,15 +32,20 @@ if(!empty($_GET['url'])){
 
 $f=file(''.$urr.'');
 $gg=@implode($f);
+echo htmlspecialchars($gg);
 $bod=maling($gg, '<body>', '</body>');
 $bod=str_replace('/page/', '?page=', $bod);
 $bod=str_replace('/download/', '?url=https://go-lagu.com/download/', $bod);
 if(!empty($_GET['url'])){
   
-  $linkdownload=maling($bod, '<div class="text-center">', '</div>');
-  $linkart=maling($bod, 'https://go-lagu.com/video?id=', '&file=');
-  $linkt=maling($bod, '180x180.jpeg" alt="', '"');
-echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>judul : <br/><input type="text" name="judul" value="'.$linkt.'><br>videoid: <br><input type="text" name="videoid" value="'.$linkart.'><br/>content: <br><textarea name="nd" value="'.$linkdownload.'></textarea><br/><select name="videocat">
+  $linkdownload=maling($bod, '</strong><br /><br />', '</div>');
+  $linkart=maling($bod, 'src="https://img.go-lagu.com/', '-');
+  $linkt=maling($bod, 'alt="', '"');
+echo ' <form method="post" action="http://downloadlagu20.com/status">Support BBCODE:<br/>
+judul : <br/><input type="text" name="judul" value="'.$linkt.'">
+<br>videoid: <br><input type="text" name="videoid" value="'.$linkart.'">
+<br/>content: <br><textarea name="nd" value="'.$linkdownload.'"></textarea><br/>
+<select name="videocat">
   <option id="cat" value="indo">indo</option>
 <option id="cat" value="kpop">kpop</option>
 <option id="cat" value="barat">barat</option>
