@@ -23,7 +23,7 @@ echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace
 }
 echo '
 } %}';
-print_r($top_album);
+print_r($top_albums);
 ?>
 {% block toplagu %}
 {% endblock %}
