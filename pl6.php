@@ -22,7 +22,7 @@ echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace
 ';
 }
 echo '
-} %}';
+} %}<br><br>';
 print_r($top_albums);
 ?>
 {% block toplagu %}
