@@ -5,7 +5,7 @@ $string = str_replace('&', '', $string);
    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/10/explicit.json'); 
-$top_albums=json_decode($content, true);
+$top_albums=json_decode($content);
 $tracks = $top_albums->feed->results;
 echo '{% set top = {
 ';
