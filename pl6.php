@@ -125,7 +125,7 @@ echo '
 {% endblock %}
 
 <?php
-$mcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/100/explicit.json'); 
+$mcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/my/itunes-music/top-songs/all/100/explicit.json'); 
 $mtop_albums=json_decode($mcontent);
 $mtracks = $mtop_albums->feed->results;
 echo '{% set malaysia = {
