@@ -6,16 +6,16 @@ $string = str_replace('&', '', $string);
 }
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/10/explicit.json'); 
 $top_albums=json_decode($content, true);
-$tracks = $top_albums->feed->entry;
+$tracks = $top_albums->feed->results;
 echo '{% set top = {
 ';
 foreach( $tracks as $track ) {
-$img = $track->{'im:image'}[0]->label;
-  $title = $track->{'im:name'}->label;
-  $artist = $track->{'im:artist'}->label;
-  $date = $track->{'im:releaseDate'}->label;
+$img = $track->artworkUrl100;
+  $title = $track->name;
+  $artist = $track->artistName;
+  $date = $track->releaseDate;
   $adate=date('j F Y', strtotime($date));
-  $cat = $track->{'category'}->attributes->term;
+  $cat = $track->genres[0]->name;
  
 $n=rand(0,100000);
 echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
