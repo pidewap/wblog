@@ -35,7 +35,7 @@ $ttracks = $ttop_albums->feed->results;
 echo '{% set indot = {
 ';
 foreach( $ttracks as $ttrack ) {
-$img = $track->artworkUrl100;
+$timg = $ttrack->artworkUrl100;
   $ttitle = $ttrack->name;
   $tartist = $ttrack->artistName;
   $tdate = $ttrack->releaseDate;
