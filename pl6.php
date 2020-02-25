@@ -1,3 +1,5 @@
+<textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">{% set some_variable='123' %}
+
 <?php
                   function clean($string) {
    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
@@ -7,7 +9,7 @@ $string = str_replace('&', '', $string);
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/100/explicit.json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->results;
-echo '{% set indob = {
+echo '{% set indobaru = {
 ';
 foreach( $tracks as $track ) {
 $img = $track->artworkUrl100;
@@ -32,7 +34,7 @@ echo '
 $tcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/id/itunes-music/top-songs/all/100/explicit.json'); 
 $ttop_albums=json_decode($tcontent);
 $ttracks = $ttop_albums->feed->results;
-echo '{% set indot = {
+echo '{% set indotop = {
 ';
 foreach( $ttracks as $ttrack ) {
 $timg = $ttrack->artworkUrl100;
@@ -56,7 +58,7 @@ echo '
 $kcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/kr/apple-music/top-songs/all/100/explicit.json'); 
 $ktop_albums=json_decode($kcontent);
 $ktracks = $ktop_albums->feed->results;
-echo '{% set kpop = {
+echo '{% set kpoptop = {
 ';
 foreach( $ktracks as $ktrack ) {
 $kimg = $ktrack->artworkUrl100;
@@ -80,7 +82,7 @@ echo '
 $bcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/us/itunes-music/top-songs/all/100/explicit.json'); 
 $btop_albums=json_decode($bcontent);
 $btracks = $btop_albums->feed->results;
-echo '{% set barat = {
+echo '{% set barattop = {
 ';
 foreach( $btracks as $btrack ) {
 $bimg = $btrack->artworkUrl100;
@@ -104,7 +106,7 @@ echo '
 $icontent=file_get_contents('https://rss.itunes.apple.com/api/v1/in/itunes-music/top-songs/all/100/explicit.json'); 
 $itop_albums=json_decode($icontent);
 $itracks = $itop_albums->feed->results;
-echo '{% set india = {
+echo '{% set indiatop = {
 ';
 foreach( $itracks as $itrack ) {
 $iimg = $itrack->artworkUrl100;
@@ -128,7 +130,7 @@ echo '
 $mcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/my/itunes-music/top-songs/all/100/explicit.json'); 
 $mtop_albums=json_decode($mcontent);
 $mtracks = $mtop_albums->feed->results;
-echo '{% set malaysia = {
+echo '{% set malaytop = {
 ';
 foreach( $mtracks as $mtrack ) {
 $mimg = $mtrack->artworkUrl100;
@@ -147,3 +149,4 @@ echo '
 ?>
 {% block malaytop %}
 {% endblock %}
+</textarea>
