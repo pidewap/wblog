@@ -1,3 +1,4 @@
+<form class="pure-form pure-form-stacked" action="https://wap4.co/site/6475/pack/129071?action=edit" method="post">
 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">{% set some_variable='123' %}
 
 <?php
@@ -171,4 +172,5 @@ echo '
 ?>
 {% block dangdut %}
 {% endblock %}
-</textarea>
+</textarea><button class="pure-button button-default pure-u-1-1" type="submit">Save file</button>
+        </form>
