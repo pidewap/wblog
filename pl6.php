@@ -58,7 +58,7 @@ echo '
 $kcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/genre=51/json'); 
 $ktop_albums=json_decode($kcontent);
 $ktracks = $ktop_albums->feed->entry;
-echo '{% set kpop = {
+echo '{% set kpoptop = {
 ';
 foreach( $ktracks as $ktrack ) {
 $kimg = $ktrack->{'im:image'}[0]->label;
@@ -147,5 +147,28 @@ echo '
 } %}';
 ?>
 {% block malaytop %}
+{% endblock %}
+
+<?php
+$dcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/genre=1274/json'); 
+$dtop_albums=json_decode($dcontent);
+$dtracks = $dtop_albums->feed->entry;
+echo '{% set dangdut = {
+';
+foreach( $dtracks as $dtrack ) {
+$dimg = $dtrack->{'im:image'}[0]->label;
+  $dtitle = $dtrack->{'im:name'}->label;
+  $dartist = $dtrack->{'im:artist'}->label;
+  $ddate = $dtrack->{'im:releaseDate'}->label;
+  $dadate=date('j F Y', strtotime($ddate));
+  $dcat = $dtrack->{'category'}->attributes->term;
+$dn=rand(0,100000);
+echo ''.$dn.': {url:"'.clean($dartist).'-'.clean($dtitle).'", title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
+';
+}
+echo '
+} %}';
+?>
+{% block dangdut %}
 {% endblock %}
 </textarea>
