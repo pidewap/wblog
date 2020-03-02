@@ -55,21 +55,20 @@ echo '
 {% endblock %}
 
 <?php
-$kcontent=file_get_contents('https://rss.itunes.apple.com/api/v1/kr/apple-music/top-songs/all/100/explicit.json'); 
+$kcontent=file_get_contents('https://itunes.apple.com/id/rss/topsongs/limit=100/genre=51/json'); 
 $ktop_albums=json_decode($kcontent);
-$ktracks = $ktop_albums->feed->results;
-echo '{% set kpoptop = {
+$ktracks = $ktop_albums->feed->entry;
+echo '{% set kpop = {
 ';
 foreach( $ktracks as $ktrack ) {
-$kimg = $ktrack->artworkUrl100;
-  $ktitle = $ktrack->name;
-  $kartist = $ktrack->artistName;
-  $kdate = $ktrack->releaseDate;
+$kimg = $ktrack->{'im:image'}[0]->label;
+  $ktitle = $ktrack->{'im:name'}->label;
+  $kartist = $ktrack->{'im:artist'}->label;
+  $kdate = $ktrack->{'im:releaseDate'}->label;
   $kadate=date('j F Y', strtotime($kdate));
-  $kcat = $ktrack->genres[0]->name;
- 
-$n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
+  $kcat = $ktrack->{'category'}->attributes->term;
+$dn=rand(0,100000);
+echo ''.$dn.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
 ';
 }
 echo '
