@@ -9,7 +9,7 @@ function http_request($url){
     curl_setopt($ch, CURLOPT_URL, $url);
     
     // set user agent    
-    curl_setopt($ch,CURLOPT_USERAGENT,'Nokia7610/2.0 (5.0509.0) SymbianOS/7.0s Series60/2.1 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    curl_setopt($ch,CURLOPT_USERAGENT,'NokiaC3-01/5.0 (06.05) Profile/MIDP-2.1 Configuration/CLDC-1.1 Opera/9.60 (J2ME/MIDP;Opera Mini/4.2.13337Mod.by.Dante./503; U; en)Presto/2.2.0 UNTRUSTED/1.0');
 
     // return the transfer as a string 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
