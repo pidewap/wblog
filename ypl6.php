@@ -1,32 +1,30 @@
 
 <?php
 
-function http_request($url){
-    // persiapkan curl
-    $ch = curl_init(); 
+function grab($url){
+// Start cURL
+       $ip=$_SERVER['REMOTE_ADDR'];
+//Geting User IP
+		$setUA = 'Opera/9.80 (BlackBerry; Opera Mini/4.5.33868/37.8993; HD; en_US) Presto/2.12.423 Version/12.16';
+// User Agent
+		$ch = curl_init();
+// calling cURL
+		curl_setopt($ch, CURLOPT_URL, $url);
+// Set URL
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// set return Transfer
+		curl_setopt($ch, CURLOPT_REFERER, $url);
+// Set HTTP Referer
+		curl_setopt($ch, CURLOPT_USERAGENT, $setUA); // Set UA curl_setopt($ch,CURLOPT_HTTPHEADER,array("REMOTE_ADDR:$ip","HTTP_X_FORWARDED_FOR:$ip"));
+// Set IP Header
+		$ret = curl_exec($ch);
+// exec CURL
+		curl_close($ch);
+// closing cURL
+		return $ret;
+// Return
+	}
 
-    // set url 
-    curl_setopt($ch, CURLOPT_URL, $url);
-    
-    // set user agent    
-    curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.14977');
-
-    // return the transfer as a string 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-    // $output contains the output string 
-    $output = curl_exec($ch); 
-
-    // tutup curl 
-    curl_close($ch);      
-
-    // mengembalikan hasil curl
-    return $output;
-}
-
-$profile = http_request("https://m.youtube.com");
-
-// ubah string JSON menjadi array
-$profilee = json_decode($profile, TRUE);
-echo $profile;
+$hasil=grab('https://m.youtube.com/?hl=id&gl=ID&client=mv-google');
+echo $hasil;
 ?>
