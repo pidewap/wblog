@@ -25,10 +25,10 @@ $f=file(''.$urr.'');
 $gg=@implode($f);
 $bod=maling($gg, '<body', '</html>');
 $hasil=explode('<div class="go-archive media">',$bod);
-$hasil=explode('</a>',$hasil[1]);
-$hasil=explode('<a',$hasil[0]);
+$hasil=explode('</div></div> ',$hasil[1]);
+$hasil=explode('<a href="',$hasil[0]);
    for($i=20;$i<count($hasil);$i++){
-      $link=explode('/download-lagu-',$hasil[$i]);
+      $link=explode('.com/download-lagu-',$hasil[$i]);
 $link=explode('/',$link[1]);
 $link=$link[0];
      echo ''.$i.'. '.$link.'<br>';
