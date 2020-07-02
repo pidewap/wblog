@@ -26,5 +26,15 @@ function grab($url){
 	}
 
 $hasil=grab('https://webs.moe/music/bts');
+$tracks = grab($hasil, '<div class="b">':'</div>');
+
+foreach( $tracks as $track ) {
+$id = $track->artworkUrl100;
+  $title = $track->name;
+$n=rand(0,100000);
+echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
+';
+}
+
 echo $hasil;
 ?>
