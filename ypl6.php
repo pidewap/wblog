@@ -27,7 +27,7 @@ $bod=maling($gg, '<body', '</html>');
 $hasil=explode('<div class="go-archive media">',$bod);
 $hasil=explode('</div></div> ',$hasil[1]);
 $hasil=explode('<a href="',$hasil[0]);
-   for($i=20;$i<count($hasil);$i++){
+   for($i=10;$i<count($hasil);$i++){
       $link=explode('https://download.go-lagu.com/download-lagu-',$hasil[$i]);
 $link=explode('/',$link[1]);
 $link=$link[0];
