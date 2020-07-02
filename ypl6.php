@@ -25,6 +25,6 @@ function grab($url){
 // Return
 	}
 
-$hasil=grab('https://m.youtube.com/?hl=id&gl=ID&client=mv-google');
+$hasil=grab('https://webs.moe/music/bts');
 echo $hasil;
 ?>
