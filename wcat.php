@@ -2,8 +2,19 @@
 <?php
 error_reporting(0);
 function clean($string) {
-    return preg_replace('/[^a-zA-Z0-9\ ]/', '', $string); // Removes special chars.
-    $string = str_replace(" ", '-', $string);
+
+    $string = trim($string); // Trim String
+
+    $string = strtolower($string); //Unwanted:  {UPPERCASE} ; / ? : @ & = + $ , . ! ~ * ' ( )
+
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);  //Strip any unwanted characters
+
+    $string = preg_replace("/[\s-]+/", " ", $string); // Clean multiple dashes or whitespaces
+
+    $string = preg_replace("/[\s_]/", "-", $string); //Convert whitespaces and underscore to dash
+
+    return $string;
+
 }
 
 $content=file_get_contents('http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=100/json');
