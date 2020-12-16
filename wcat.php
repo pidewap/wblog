@@ -113,7 +113,8 @@ echo ''.$n.': {url:"url'.clean($ui).'url", title: "'.str_replace(',','',str_repl
 ';
 }
 echo '
-} %}';
+} %}{% block india %}
+{% endblock %}';
 
 
 $content=file_get_contents('https://itunes.apple.com/us/rss/topsongs/limit=100/genre=29/json');
