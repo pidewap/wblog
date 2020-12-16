@@ -18,7 +18,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -37,7 +37,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -55,7 +55,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -73,7 +73,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -91,7 +91,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -109,7 +109,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -127,7 +127,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -145,7 +145,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
     $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
@@ -163,7 +163,7 @@ $img = $track->{'im:image'}[0]->label;
     $artist = $track->{'im:artist'}->label;
                $ui=''.$title.' '.$artist.'';
 $n=rand(0,100000);
-echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
+echo ''.$n.': {url:"url'.clean($ui).'", title: "'.str_replace(',','',str_replace('"','',$title)).'url", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'"},
 ';
 }
 echo '
