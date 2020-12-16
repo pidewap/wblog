@@ -1,9 +1,20 @@
 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">{% set some_variable='123' %}
 
 <?php
-                  function clean($string) {
-    return preg_replace('/[^a-zA-Z0-9\ ]/', '', $string); // Removes special chars.
-    $string = str_replace(" ", '-', $string);
+function clean($string) {
+
+    $string = trim($string); // Trim String
+
+    $string = strtolower($string); //Unwanted:  {UPPERCASE} ; / ? : @ & = + $ , . ! ~ * ' ( )
+
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);  //Strip any unwanted characters
+
+    $string = preg_replace("/[\s-]+/", " ", $string); // Clean multiple dashes or whitespaces
+
+    $string = preg_replace("/[\s_]/", "-", $string); //Convert whitespaces and underscore to dash
+
+    return $string;
+
 }
 
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/100/explicit.json'); 
