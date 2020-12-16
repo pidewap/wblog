@@ -13,7 +13,8 @@ $tracks = $top_albums->feed->results;
 echo '{% set indobaru = {
 ';
 foreach( $tracks as $track ) {
-$img = $track->artworkUrl100;
+if(isset($track->artistName)){
+  $img = $track->artworkUrl100;
   $title = $track->name;
   $artist = $track->artistName;
   $date = $track->releaseDate;
@@ -23,7 +24,7 @@ $img = $track->artworkUrl100;
 $n=rand(0,100000);
 echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
 ';
-}
+}}
 echo '
 } %}';
 ?>
