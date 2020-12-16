@@ -2,8 +2,8 @@
 
 <?php
                   function clean($string) {
-    return preg_replace('/[^a-zA-Z0-9\']/', '', $string); // Removes special chars.
-    $string = str_replace("'", '', $string);
+    return preg_replace('/[^a-zA-Z0-9\ ]/', '', $string); // Removes special chars.
+    $string = str_replace(" ", '-', $string);
 }
 
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/100/explicit.json'); 
