@@ -1,4 +1,3 @@
-<form class="pure-form pure-form-stacked" action="https://wap4.co/site/6475/pack/129071?action=edit" method="post">
 <textarea id="code" name="contents" style="width: 100%; min-height: 200px;" rows="35">{% set some_variable='123' %}
 
 <?php
@@ -22,7 +21,7 @@ if(isset($track->artistName)){
   $cat = $track->genres[0]->name;
  
 $n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($artist).'-'.clean($title).'", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
+echo ''.$n.': {url:"url'.clean($artist).'-'.clean($title).'url", title: "'.str_replace(',','',str_replace('"','',$title)).'", artist: "'.str_replace(',','',str_replace('"','',$artist)).'", img: "'.$img.'", date: "'.$adate.'", cat: "'.$cat.'"},
 ';
 }}
 echo '
@@ -47,7 +46,7 @@ $timg = $ttrack->artworkUrl100;
   $tcat = $ttrack->genres[0]->name;
  
 $n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($tartist).'-'.clean($ttitle).'", title: "'.str_replace(',','',str_replace('"','',$ttitle)).'", artist: "'.str_replace(',','',str_replace('"','',$tartist)).'", img: "'.$timg.'", date: "'.$tadate.'", cat: "'.$tcat.'"},
+echo ''.$n.': {url:"url'.clean($tartist).'-'.clean($ttitle).'url", title: "'.str_replace(',','',str_replace('"','',$ttitle)).'", artist: "'.str_replace(',','',str_replace('"','',$tartist)).'", img: "'.$timg.'", date: "'.$tadate.'", cat: "'.$tcat.'"},
 ';
 }
 echo '
@@ -70,7 +69,7 @@ $kimg = $ktrack->{'im:image'}[0]->label;
   $kadate=date('j F Y', strtotime($kdate));
   $kcat = $ktrack->{'category'}->attributes->term;
 $dn=rand(0,100000);
-echo ''.$dn.': {url:"'.clean($kartist).'-'.clean($ktitle).'", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
+echo ''.$dn.': {url:"url'.clean($kartist).'-'.clean($ktitle).'url", title: "'.str_replace(',','',str_replace('"','',$ktitle)).'", artist: "'.str_replace(',','',str_replace('"','',$kartist)).'", img: "'.$kimg.'", date: "'.$kadate.'", cat: "'.$kcat.'"},
 ';
 }
 echo '
@@ -94,7 +93,7 @@ $bimg = $btrack->artworkUrl100;
   $bcat = $btrack->genres[0]->name;
  
 $n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($bartist).'-'.clean($btitle).'", title: "'.str_replace(',','',str_replace('"','',$btitle)).'", artist: "'.str_replace(',','',str_replace('"','',$bartist)).'", img: "'.$bimg.'", date: "'.$badate.'", cat: "'.$bcat.'"},
+echo ''.$n.': {url:"url'.clean($bartist).'-'.clean($btitle).'url", title: "'.str_replace(',','',str_replace('"','',$btitle)).'", artist: "'.str_replace(',','',str_replace('"','',$bartist)).'", img: "'.$bimg.'", date: "'.$badate.'", cat: "'.$bcat.'"},
 ';
 }
 echo '
@@ -118,7 +117,7 @@ $iimg = $itrack->artworkUrl100;
   $icat = $itrack->genres[0]->name;
  
 $n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($iartist).'-'.clean($ititle).'", title: "'.str_replace(',','',str_replace('"','',$ititle)).'", artist: "'.str_replace(',','',str_replace('"','',$iartist)).'", img: "'.$iimg.'", date: "'.$iadate.'", cat: "'.$icat.'"},
+echo ''.$n.': {url:"url'.clean($iartist).'-'.clean($ititle).'url", title: "'.str_replace(',','',str_replace('"','',$ititle)).'", artist: "'.str_replace(',','',str_replace('"','',$iartist)).'", img: "'.$iimg.'", date: "'.$iadate.'", cat: "'.$icat.'"},
 ';
 }
 echo '
@@ -142,7 +141,7 @@ $mimg = $mtrack->artworkUrl100;
   $mcat = $mtrack->genres[0]->name;
  
 $n=rand(0,100000);
-echo ''.$n.': {url:"'.clean($martist).'-'.clean($mtitle).'", title: "'.str_replace(',','',str_replace('"','',$mtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$martist)).'", img: "'.$mimg.'", date: "'.$madate.'", cat: "'.$mcat.'"},
+echo ''.$n.': {url:"url'.clean($martist).'-'.clean($mtitle).'url", title: "'.str_replace(',','',str_replace('"','',$mtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$martist)).'", img: "'.$mimg.'", date: "'.$madate.'", cat: "'.$mcat.'"},
 ';
 }
 echo '
@@ -165,7 +164,7 @@ $dimg = $dtrack->{'im:image'}[0]->label;
   $dadate=date('j F Y', strtotime($ddate));
   $dcat = $dtrack->{'category'}->attributes->term;
 $dn=rand(0,100000);
-echo ''.$dn.': {url:"'.clean($dartist).'-'.clean($dtitle).'", title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
+echo ''.$dn.': {url:"url'.clean($dartist).'-'.clean($dtitle).'url", title: "'.str_replace(',','',str_replace('"','',$dtitle)).'", artist: "'.str_replace(',','',str_replace('"','',$dartist)).'", img: "'.$dimg.'", date: "'.$dadate.'", cat: "'.$dcat.'"},
 ';
 }
 echo '
@@ -173,5 +172,4 @@ echo '
 ?>
 {% block dangdut %}
 {% endblock %}
-</textarea><button class="pure-button button-default pure-u-1-1" type="submit">Save file</button>
-        </form>
+</textarea>
