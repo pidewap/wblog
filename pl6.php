@@ -2,10 +2,10 @@
 
 <?php
                   function clean($string) {
-   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-$string = str_replace('&', '', $string);
-   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    return preg_replace('/[^a-zA-Z0-9\']/', '', $string); // Removes special chars.
+    $string = str_replace("'", '', $string);
 }
+
 $content=file_get_contents('https://rss.itunes.apple.com/api/v1/id/apple-music/new-releases/all/100/explicit.json'); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->results;
